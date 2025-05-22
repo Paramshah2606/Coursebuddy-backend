@@ -15,6 +15,7 @@ module.exports = {
     DB_Database:process.env.DB_Database,
     DB_User:process.env.DB_User,
     DB_Host:process.env.DB_Host,
+    DB_Port:process.env.DB_Port,
     KEY:process.env.KEY,
     IV:process.env.IV,
     JWT_SECRET:process.env.JWT_SECRET,

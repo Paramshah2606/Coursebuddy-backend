@@ -20,7 +20,10 @@ module.exports = {
     IV:process.env.IV,
     JWT_SECRET:process.env.JWT_SECRET,
     STRIPE_SECRET_KEY:process.env.STRIPE_SECRET_KEY,
-    STRIPE_WEBHOOK_SECRET:process.env.STRIPE_WEBHOOK_SECRET
+    STRIPE_WEBHOOK_SECRET:process.env.STRIPE_WEBHOOK_SECRET,
+    STRIPE_WEBHOOK_SECRET_PROD:process.env.STRIPE_WEBHOOK_SECRET_PROD,
+    Base_url:process.env.Base_url,
+    Base_url_local:process.env.Base_url_local
   };
 
 // API_KEY="e28192c7502b7bbb04e981cc6d53939e"

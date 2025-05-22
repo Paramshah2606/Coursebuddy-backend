@@ -3,6 +3,7 @@ const constant=require('../../../../config/constant')
 const stripe = Stripe(constant.STRIPE_SECRET_KEY);
 const Common = require('../../../../utils/common');
 const ResponseCode = require('../../../../utils/response-code');
+const baseurl=constant.Base_url;
 
 const payment_model = {
     create_checkout_session: async (req, res) => {
@@ -35,8 +36,8 @@ const payment_model = {
                     quantity: 1,
                 }],
                 customer_email: 'paramshah2606@gmail.com',
-                success_url: `http://localhost:3000/payment-success?session_id={CHECKOUT_SESSION_ID}`,
-                cancel_url: `http://localhost:3000/payment-cancelled`,
+                success_url: `${baseurl}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
+                cancel_url: `${baseurl}/payment-cancelled`,
                 metadata: {
                     user_id: user_id.toString(),
                     course_id: course_id.toString(),
@@ -61,7 +62,7 @@ const payment_model = {
             event = stripe.webhooks.constructEvent(
                 req.body,
                 sig,
-                constant.STRIPE_WEBHOOK_SECRET
+                constant.STRIPE_WEBHOOK_SECRET_PROD
             );
             console.log(`Event received: ${event.type}`);
 

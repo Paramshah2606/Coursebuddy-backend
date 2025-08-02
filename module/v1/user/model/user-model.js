@@ -224,7 +224,7 @@ const UserModel = {
     get_users:async (req,res)=>{
         try {
             let user_id=req.user_id;
-            let getUserQuery=`SELECT id,full_name,email,CONCAT(country_code," ",phone) as phone,role FROM tbl_user WHERE is_active=1 AND is_deleted=0`;
+            let getUserQuery=`SELECT id,full_name,email,CONCAT(country_code,' ',phone) as phone,role FROM tbl_user WHERE is_active=1 AND is_deleted=0`;
             let getUserRes=await Common.executeQuery(getUserQuery);
             if(getUserRes.length===0){
                 return Common.generateResponse(req, res,404, ResponseCode.DATA_NOT_FOUND, { keyword: "no_User_found" } );

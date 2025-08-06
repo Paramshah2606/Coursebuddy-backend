@@ -37,7 +37,7 @@ const payment_model = {
                 }],
                 customer_email: 'paramshah2606@gmail.com',
                 success_url: `${baseurl}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
-                cancel_url: `${baseurl}/payment-cancelled`,
+                cancel_url: `${baseurl}/payment-cancel`,
                 metadata: {
                     user_id: user_id.toString(),
                     course_id: course_id.toString(),
